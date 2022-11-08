@@ -9,11 +9,13 @@ import Order from './pages/Order';
 import Saved from './pages/Saved';
 import Setting from './pages/Setting';
 import Sidebar from './Components/Sidebar/Sidebar';
+import Navbar from './Components/Navbar/Navbar'
 
 function App() {
   return (
     <>
     <Router>
+      <Navbar />
       <Sidebar>
       <Routes>
         <Route path="/" element={<Dashboard/>}/>

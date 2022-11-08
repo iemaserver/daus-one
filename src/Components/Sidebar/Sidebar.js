@@ -3,6 +3,7 @@ import classes from './Sidebar.module.css'
 import { AnimatePresence, motion } from 'framer-motion';
 import { FaUser, FaDollarSign, FaUserGraduate, FaUsers, FaDochub, FaBookMedical, FaHeart, FaSyringe, FaBars } from 'react-icons/fa'
 import { NavLink, useLocation } from 'react-router-dom';
+// import Navbar from '../Navbar/Navbar'
 
 const routes = [
     {
@@ -94,6 +95,7 @@ function Sidebar(props) {
                 </section>
             </motion.div>
             <main className={classes['main-content']}>
+                {/* <Navbar /> */}
                 {props.children}
             </main>
         </div>
