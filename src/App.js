@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Profile from './Components/MainComponent/pages/Profile/Profile';
-import Documents from './Components/MainComponent/pages/Documents';
+import Documents from './Components/MainComponent/pages/DocumentBank/Documents';
 import RotaManagement from './Components/MainComponent/pages/RotaManagement';
 import StaffBank from './Components/MainComponent/pages/StaffBank';
 import Locum from './Components/MainComponent/pages/Locum';
