@@ -2,10 +2,9 @@ a {
     text-decoration: none;
   }
   .sidebar {
-    
-    background-color: #fafafa;
+    background-color: #f30a0a;
     color: black;
-    
+    align-items: flex-start;
   }
   /* .top_section {
     display: flex;

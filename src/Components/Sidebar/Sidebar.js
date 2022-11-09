@@ -2,7 +2,8 @@ import React from 'react';
 import classes from './Sidebar.module.css'
 // import Navbar from '../Header/Navbar'
 import { AnimatePresence, motion } from 'framer-motion';
-import { FaUsers, FaBookMedical, FaHeart, FaSyringe } from 'react-icons/fa';
+// import { FaUsers, FaBookMedical, FaHeart, FaSyringe } from 'react-icons/fa';
+import { FaUsers } from 'react-icons/fa';
 import RememberMeIcon from '@mui/icons-material/RememberMe';
 import FolderZipIcon from '@mui/icons-material/FolderZip';
 import PendingActionsIcon from '@mui/icons-material/PendingActions';
@@ -35,24 +36,30 @@ const routes = [
         path: "/locum",
         name: "Locum",
         icon: <AddLocationIcon />,
-        subRoutes: [
-            {
-                path: "/settings/profile",
-                name: "Lab Tests",
-                icon: <FaBookMedical />,
-            },
-            {
-                path: "/settings/2fa",
-                name: "Cardiography",
-                icon: <FaHeart />,
-            },
-            {
-                path: "/settings/billing",
-                name: "Blood Tests",
-                icon: <FaSyringe />,
-            },
-        ],
     },
+    
+    // {
+    //     path: "/locum",
+    //     name: "Locum",
+    //     icon: <AddLocationIcon />,
+    //     subRoutes: [
+    //         {
+    //             path: "/settings/profile",
+    //             name: "Lab Tests",
+    //             icon: <FaBookMedical />,
+    //         },
+    //         {
+    //             path: "/settings/2fa",
+    //             name: "Cardiography",
+    //             icon: <FaHeart />,
+    //         },
+    //         {
+    //             path: "/settings/billing",
+    //             name: "Blood Tests",
+    //             icon: <FaSyringe />,
+    //         },
+    //     ],
+    // },
 ];
 
 function Sidebar(props) {
@@ -76,6 +83,7 @@ function Sidebar(props) {
         },
     };
     return (
+        
         <div className={classes["main-container"]}>
             <motion.div animate={{ width: props.isOpen ? "200px" : "45px", transition:{duration:"0.5s",type:"spring",damping:"13"} }} className={classes["sidebar"]}>
                 {/* <div className={classes["top_section"]}>
