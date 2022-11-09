@@ -2,9 +2,10 @@ a {
     text-decoration: none;
   }
   .sidebar {
+    
     background-color: #fafafa;
     color: black;
-    height: 100vh;
+    
   }
   /* .top_section {
     display: flex;
@@ -40,6 +41,7 @@ a {
   }
   .main-container {
     display: flex;
+    height: 100%;
   }
   .main-content {
     background-color:  #ffffff;

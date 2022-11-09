@@ -27,7 +27,7 @@ const routes = [
         icon: <PendingActionsIcon />,
     },
     {
-        path: "/staffs",
+        path: "/staff",
         name: "Staff Bank",
         icon: <FaUsers />,
     },

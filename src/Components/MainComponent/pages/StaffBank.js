@@ -1,5 +1,5 @@
-const Setting = () => {
-  return <div className="title"> <h1>Settings Page</h1></div>;
+const StaffBank = () => {
+  return <div className="title"> <h1>Staff Bank Page</h1></div>;
 };
 
-export default Setting;
+export default StaffBank;
