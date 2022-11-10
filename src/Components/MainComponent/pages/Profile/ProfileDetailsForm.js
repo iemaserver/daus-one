@@ -1,76 +1,83 @@
-import React, { useState } from "react";
-import InputAdornment from "@mui/material/InputAdornment";
-// import Box from '@mui/material/Box';
-import TextField from "@mui/material/TextField";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import { Grid } from "@mui/material";
-import InputLabel from "@mui/material/InputLabel";
-import NativeSelect from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-// import Select from "@mui/material/Select";
+import { Box, Grid, MenuItem, TextField } from "@mui/material";
 import { Stack } from "@mui/system";
+import { useState } from "react";
+
+
 
 export default function ProfileDetailsForm() {
-  const [age, setAge] = useState("");
-
+  const [gender, setGender]= useState("");
+  const genders = [
+    {
+      value: 'Male',
+      label: 'Male',
+    },
+    {
+      value: 'Female',
+      label: 'Female',
+    },
+    {
+      value: 'Other',
+      label: 'Other',
+    }
+  ];
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setGender(event.target.value);
   };
   return (
-    // <Box sx={{flexGrow:"1"}}>
-    <Grid item mt={3} spacing={3}>
-      <Stack spacing={3}>
-        <Grid lg={5} md={6} sm={6} xs={6}>
+    <Stack spacing={3} mt={3}>
+      <Grid container spacing={2}>
+        <Grid item lg={6}>
           <TextField
             fullWidth
             required
-            id="input-with-icon-textfield"
-            label="Medical Defence Organisation Number"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <AccountCircle />
-                </InputAdornment>
-              ),
-            }}
-            variant="standard"
+            id="outlined-required"
+            label="Defence Organization Number"
+            defaultValue="Hello World"
           />
         </Grid>
-        <Grid lg={5} md={6} sm={6} xs={6}>
-          <FormControl fullWidth>
-            <InputLabel variant="standard" htmlFor="uncontrolled-native">
-              Age
-            </InputLabel>
-            <NativeSelect
-              defaultValue={30}
-              inputProps={{
-                name: "age",
-                id: "uncontrolled-native",
-              }}
-            >
-              <option value={10}>Ten</option>
-              <option value={20}>Twenty</option>
-              <option value={30}>Thirty</option>
-            </NativeSelect>
-          </FormControl>
+        <Grid item lg={6}>
+        <TextField fullWidth
+          id="outlined-select-currency"
+          select
+          label="Select"
+          value={gender}
+          onChange={handleChange}
+          helperText="Please select your Gender"
+        >
+          {genders.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+        </Grid >
+
+        <Grid item lg={6}>
+        <TextField fullWidth
+          id="outlined-select-currency"
+          select
+          value={gender}
+          label="Select"
+          onChange={handleChange}
+          helperText="Please select your Gender"
+        >
+          {genders.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
         </Grid>
-        <Grid lg={5} md={6} sm={12} xs={12}>
+        <Grid item lg={6}>
           <TextField
             fullWidth
-            id="input-with-icon-textfield"
-            label="TextField"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <AccountCircle />
-                </InputAdornment>
-              ),
-            }}
-            variant="standard"
+            required
+            id="outlined-required"
+            label="Gender"
+            defaultValue="Hello World"
           />
-        </Grid>
-      </Stack>
-    </Grid>
-    // </Box>
+        </Grid >
+      </Grid>
+    </Stack>
   );
 }

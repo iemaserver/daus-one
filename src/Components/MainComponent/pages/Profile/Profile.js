@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 // import { styled } from '@mui/material/styles';
 import ProfilePreview from './ProfilePreview';
-import { Grid } from '@mui/material';
+import { Grid, Paper } from '@mui/material';
 import ImgUpload from '../../../ImageUpload/ImgUpload';
 import ProfileDetails from './ProfileDetails';
 import ProfileDetailsForm from './ProfileDetailsForm';
+import ProfileStatus from './ProfileStatus';
 
 
 
@@ -23,23 +24,30 @@ import ProfileDetailsForm from './ProfileDetailsForm';
 // }));
 
 export default function Profile() {
-  const [file, setFile] = useState();
-  function handleChange(e) {
-    console.log(e.target.files);
-    setFile(URL.createObjectURL(e.target.files[0]));
-  }
+  // const [file, setFile] = useState();
+  // function handleChange(e) {
+  //   console.log(e.target.files);
+  //   setFile(URL.createObjectURL(e.target.files[0]));
+  // }
   return (
     <>
 
-      <Grid container spacing={2}>
-        <Grid item lg={3} xs={12} sm={12} md={3}>
-          <ProfilePreview imgSrc={file} />
+      <Grid container spacing={2} height="100%">
+        <Grid item lg={3} xs={12} sm={12} md={3} >
+          <Paper elevation={3}>
+            <ProfilePreview />
+          </Paper>
         </Grid>
         <Grid item lg={9} xs={12} sm={12} md={9}>
-          <ProfileDetails>
-            <ImgUpload onChange={handleChange} />
-            <ProfileDetailsForm />
-          </ProfileDetails>
+          <Paper elevation={3} sx={{ padding: "20px", height: "100%" }}>
+            <ProfileDetails name={"Profile Details"}>
+              <ImgUpload />
+              <ProfileDetailsForm />
+            </ProfileDetails>
+            <ProfileDetails name={"Profile Status"}>
+              <ProfileStatus />
+            </ProfileDetails>
+          </Paper>
         </Grid>
       </Grid>
     </>

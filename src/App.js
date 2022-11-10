@@ -12,7 +12,9 @@ import {useState} from 'react';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+  function toggle(){
+    setIsOpen(!isOpen);
+  }
   return (
     <>
       <Router>

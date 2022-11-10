@@ -37,7 +37,6 @@ const routes = [
         name: "Locum",
         icon: <AddLocationIcon />,
     },
-    
     // {
     //     path: "/locum",
     //     name: "Locum",

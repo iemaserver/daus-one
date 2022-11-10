@@ -1,57 +1,37 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Skeleton from '@mui/material/Skeleton';
+import { Card, CardContent, CardMedia, Typography } from '@mui/material'
 import { Box, Stack } from '@mui/system';
+import React from 'react';
 
-function ProfilePreview(props) {
-  return (
-    <Card sx={{ padding: "1%" }} elevation={3}>
-        <CardMedia
-        >{props.imgSrc?<img src={props.imgSrc} height="450px" width="100%" alt="Profile"/>:<Skeleton variant="rounded" width={"100%"} height={450} sx={{textAlign:"center", paddingTop:"225px"}}>Profile Image</Skeleton>}</CardMedia>
-        <CardContent sx={{height:"100%"}}>
-          <Typography mb={2} gutterBottom variant="h4" component="div" sx={{ fontWeight: "bold" }}>
-            Dr. Sunder Mathur
-          </Typography>
-          <Stack spacing={2}>
-          <Box >
-            <Typography variant="body6" color="text.secondary" sx={{ display: "block" }}>
-              Date of Birth
-            </Typography>
-            <Typography variant="h6" >
-              26-07-1998
-            </Typography>
-          </Box>
-          <Box >
-            <Typography variant="body6" color="text.secondary" sx={{ display: "block" }}>
-              GMC Number
-            </Typography>
-            <Typography variant="h6" >
-              65486485
-            </Typography>
-          </Box>
-          <Box >
-            <Typography variant="body6" color="text.secondary" sx={{ display: "block" }}>
-              E-Mail Id
-            </Typography>
-            <Typography variant="h6" >
-              sunder.mathur@example.com
-            </Typography>
-          </Box>
-          <Box >
-            <Typography variant="body6" color="text.secondary" sx={{ display: "block" }}>
-              Contact
-            </Typography>
-            <Typography variant="h6" >
-              0333 4581853
-            </Typography>
-          </Box>
-          </Stack>
-        </CardContent>
-      </Card>
-  )
+export default function ProfilePreview() {
+    return (
+        <Card sx={{ height: "100%", paddingBottom: "0", marginBottom: "0" }}>
+            <CardMedia image='/Images/Final/profileBg.jpg' component="img" width="100%" height="250px" alt="ProfileBG" sx={{opacity:"0.8"}}/>
+            <CardMedia image='/Images/Profile/avatar6.jpg' component="img" alt='avatar' height="200" style={{ position: "relative", width: "200px", border: "3px solid white", borderRadius: "50%", marginTop: "-100px", margin: "-100px auto 0 auto" }} />
+
+            <CardContent style={{ padding: "5%", width:"100%", opacity: "0.7", textAlign: "center", display: "inline-block", position: "relative" }}>
+                <Typography variant="h5" fontWeight={"bold"} textAlign="center">Dr. Robet Johnes</Typography>
+                <Stack spacing={3} mt={3} mb={0}>
+                    <Box sx={{display:"flex",flexDirection:"column", justifyContent:"center"}}>
+                        <Typography variant='body4' fontWeight={"bold"}>Date of Birth</Typography>
+                        <Typography variant="h6">26-01-1986</Typography>
+                    </Box>
+                    <Box>
+                        <Typography variant='body4' fontWeight={"bold"}>GMC Number</Typography>
+                        <Typography variant="h6">895 3254</Typography>
+                    </Box>
+                    <Box>
+                        <Typography variant='body4'fontWeight={"bold"}>Email ID</Typography>
+                        <Typography variant="h6">robert.johnes@nhs.com</Typography>
+                    </Box>
+                    <Box>
+                        <Typography variant='body4' fontWeight={"bold"}>Contact Number</Typography>
+                        <Typography variant="h6">Sample Text</Typography>
+                    </Box>
+                </Stack>
+            </CardContent>
+        </Card>
+
+    )
 }
 
-export default ProfilePreview
+
