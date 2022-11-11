@@ -34,12 +34,19 @@ export default function Profile() {
 
       <Grid container spacing={2} height="100%">
         <Grid item lg={3} xs={12} sm={12} md={3} >
-          <Paper elevation={3}>
+          <Paper 
+          sx={{
+            display: "flex",
+            flexFlow: "column",
+            height: "90vh",
+            
+          }}
+          elevation={3}>
             <ProfilePreview />
           </Paper>
         </Grid>
         <Grid item lg={9} xs={12} sm={12} md={9}>
-          <Paper elevation={3} sx={{ padding: "20px", height: "100%" }}>
+          <Paper elevation={3} sx={{ padding: "20px", height: "100%" ,backgroundColor:"#fbf9ec"}}>
             <ProfileDetails name={"Profile Details"}>
               <ImgUpload />
               <ProfileDetailsForm />

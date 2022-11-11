@@ -2,8 +2,8 @@ a {
     text-decoration: none;
   }
   .sidebar {
-    background-color: rgb(231, 231, 231);
-    color: black;
+    background-color: #ffffff;
+    color: rgb(5, 87, 32);
     /* overflow-y: auto; */
     /* height: 100vh; */
     height:100vh;
@@ -18,10 +18,11 @@ a {
   .logo {
     font-size: 18px;
     line-height: 0;
+    color:rgb(5, 87, 32);
   }
   .link {
     display: flex;
-    color: black;
+    color: rgb(5, 87, 32);
     margin: 10px 0;
     gap: 10px;
     padding: 5px 10px;
@@ -50,6 +51,7 @@ a {
   }
   .main-content {
     padding: 20px;
+    background-color: #fbf9ec;
     /* max-height: calc(100vh-64px); */
     width: 100%;
     overflow-y:scroll;
@@ -61,7 +63,7 @@ a {
     display:none;
   }
   .active {
-    border-right: 4px solid black;
+    border-right: 4px solid rgb(5, 87, 32);;
     background: rgb(199, 199, 199);
   }
   

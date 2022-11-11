@@ -7,8 +7,8 @@ function listItem(props) {
                 <Card elevation={3}>
                     <Box
                         sx={{
-                            bgcolor: props.open ? 'black' : "grey",
-                            color: props.open ? 'white' : 'black',
+                            bgcolor: "#cfcfcf",
+                            color: 'black',
                             pb: props.open ? 2 : 0,
                         }}
                     >
@@ -35,7 +35,7 @@ function listItem(props) {
                                     noWrap: true,
                                     fontSize: 12,
                                     lineHeight: '16px',
-                                    color: props.open ? 'rgba(0,0,0,0)' : 'rgba(255,255,255,0.5)',
+                                    color: props.open?"#c7c7c7":"white",
                                 }}
                                 sx={{ my: 0 }}
                             />
@@ -52,7 +52,7 @@ function listItem(props) {
                             props.data.map((item) => (
                                 <ListItemButton
                                     key={item.label}
-                                    sx={{ py: 0, minHeight: 32, color: 'rgba(255,255,255,.8)' }}
+                                    sx={{ py: 0, minHeight: 32, color: 'white' }}
                                 >
                                     <ListItemIcon sx={{ color: 'inherit' }}>
                                         {item.icon}
