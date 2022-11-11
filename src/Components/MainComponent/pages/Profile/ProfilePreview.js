@@ -1,12 +1,13 @@
-import { Card, CardContent, CardMedia, Typography } from '@mui/material'
+import { Card, CardContent, CardMedia, Skeleton, Typography } from '@mui/material'
 import { Box, Stack } from '@mui/system';
 import React from 'react';
 
-export default function ProfilePreview() {
+export default function ProfilePreview(props) {
     return (
         <Card sx={{backgroundColor:"#fbf9ec",height: "100%", paddingBottom: "0", marginBottom: "0" }}>
             <CardMedia image='/Images/Profile/bg.webp' component="img" width="100%" height="300px" alt="ProfileBG" sx={{opacity:"0.7"}}/>
-            <CardMedia image='/Images/Profile/avatar6.jpg' component="img" alt='avatar' height="200" style={{ position: "relative", width: "200px", border: "3px solid #296a19", borderRadius: "50%", marginTop: "-100px", margin: "-100px auto 0 auto" }} />
+            {props.file?<CardMedia image={props.file} component="img" alt='avatar' height="200" style={{ position: "relative", width: "200px", border: "3px solid #296a19", borderRadius: "50%", marginTop: "-100px", margin: "-100px auto 0 auto" }} />
+            :<Skeleton variant='circular'  style={{ position: "relative", width: "200px",height:"200px", border: "3px solid #296a19",backgroundColor:"black", borderRadius: "50%", marginTop: "-100px", margin: "-100px auto 0 auto" }}></Skeleton>}
 
             <CardContent style={{ padding: "5%", width:"100%", opacity: "0.7", textAlign: "center", display: "inline-block", position: "relative" }}>
                 <Typography variant="h5" fontWeight={"bold"} textAlign="center" color={"#296a19"}>Dr. Robet Johnes</Typography>

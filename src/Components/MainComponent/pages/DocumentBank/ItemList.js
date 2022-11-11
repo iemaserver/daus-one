@@ -10,6 +10,7 @@ function listItem(props) {
                             bgcolor: "#cfcfcf",
                             color: 'black',
                             pb: props.open ? 2 : 0,
+                            minWidth:"250px",
                         }}
                     >
                         <ListItemButton
@@ -23,14 +24,14 @@ function listItem(props) {
                             }}
                         >
                             <ListItemText
-                                primary="Build"
+                                primary={props.header}
                                 primaryTypographyProps={{
                                     fontSize: 15,
                                     fontWeight: 'medium',
                                     lineHeight: '20px',
                                     mb: '2px',
                                 }}
-                                secondary="Authentication, props.database, Storage, Hosting, props.database, Storage, Hosting,props.database, Storage, Hosting"
+                                secondary={props.list}
                                 secondaryTypographyProps={{
                                     noWrap: true,
                                     fontSize: 12,

@@ -3,6 +3,7 @@ import { Grid, Paper } from "@mui/material";
 import React from "react";
 import "./Document.css";
 import DocumentList from "./DocumentList";
+import DocumentOverView from "./DocumentOverView";
 
 const hrDocs = [
   { icon: <ArticleIcon />, label: "CV" },
@@ -52,7 +53,7 @@ function Documents() {
           overflowY: "scroll",
           padding:"20px"
         }}>
-
+          <DocumentOverView/>
         </Paper>
       </Grid>
     </Grid>

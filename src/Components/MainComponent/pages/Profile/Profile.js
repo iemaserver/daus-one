@@ -24,11 +24,10 @@ import ProfileStatus from './ProfileStatus';
 // }));
 
 export default function Profile() {
-  // const [file, setFile] = useState();
-  // function handleChange(e) {
-  //   console.log(e.target.files);
-  //   setFile(URL.createObjectURL(e.target.files[0]));
-  // }
+  const [file, setFile] = useState('');
+  function handleChange(e) {
+    setFile(URL.createObjectURL(e.target.files[0]));
+  }
   return (
     <>
 
@@ -42,13 +41,13 @@ export default function Profile() {
             
           }}
           elevation={3}>
-            <ProfilePreview />
+            <ProfilePreview file={file}/>
           </Paper>
         </Grid>
         <Grid item lg={9} xs={12} sm={12} md={9}>
           <Paper elevation={3} sx={{ padding: "20px", height: "100%" ,backgroundColor:"#fbf9ec"}}>
             <ProfileDetails name={"Profile Details"}>
-              <ImgUpload />
+              <ImgUpload onChange={handleChange}/>
               <ProfileDetailsForm />
             </ProfileDetails>
             <ProfileDetails name={"Profile Status"}>
